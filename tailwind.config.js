@@ -1,42 +1,56 @@
-/** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    './index.html',
-    './src/**/*.{js,jsx}',
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#2563EB',
-        secondary: '#3B82F6',
-        accent: '#60A5FA',
-        background: '#FFFFFF',
-        surface: '#F8FAFC',
-        text: '#111827',
-        muted: '#6B7280',
-        border: '#E5E7EB',
-        success: '#10B981',
-        danger: '#EF4444',
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        accent: "var(--accent)",
+        success: "var(--success)",
+        danger: "var(--danger)",
+        warning: "var(--warning)",
+        info: "var(--info)",
+        text: "var(--text)",
+        muted: "var(--muted)",
+        border: "var(--border)",
+        background: "var(--background)",
+        surface: "var(--surface)",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ["Plus Jakarta Sans", "sans-serif"],
       },
-      spacing: {
-        'safe-top': 'env(safe-area-inset-top)',
-        'safe-bottom': 'env(safe-area-inset-bottom)',
-      },
-      borderRadius: {
-        'xl': '1rem',
-        '2xl': '1.5rem',
-        '3xl': '2rem',
+      transitionDuration: {
+        200: "200ms",
+        300: "300ms",
+        400: "400ms",
       },
       boxShadow: {
-        'soft': '0 4px 15px rgba(0, 0, 0, 0.08)',
-        'soft-md': '0 8px 20px rgba(0, 0, 0, 0.1)',
-        'soft-lg': '0 12px 30px rgba(0, 0, 0, 0.12)',
+        "soft-sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        "soft-md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        "soft-lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
       },
-      transitionTimingFunction: {
-        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      animation: {
+        "fade-in": "fadeIn 0.5s ease-in",
+        "slide-in-up": "slideInUp 0.5s ease-out",
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        slideInUp: {
+          from: {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
     },
   },
